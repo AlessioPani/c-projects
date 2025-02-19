@@ -52,8 +52,7 @@ int main() {
 
     // Ask the user his move.
     printf("Select your move (Rock: r | Paper: p | Scissors: s | Exit: e): ");
-    //scanf(" %c", &userMove);
-    userMove = getchar();
+    scanf(" %c", &userMove);
     while (getchar() != '\n'); // Clear the input buffer
 
     // Check for input and args.
