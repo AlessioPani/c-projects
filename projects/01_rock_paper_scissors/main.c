@@ -1,20 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <time.h>
+#include "../../common/common.h"
 
 // Custom definition
-#define STATUS_OK 0
-#define STATUS_KO -1
-#define VALIDATION_OK true
-#define VALIDATION_KO false
 #define WIN 1
 #define DRAW 2
 #define LOSS 3
 
 // Custom types
-typedef int Status_t;
-typedef bool Validation_t;
 typedef char Input_t;
 typedef int Result_t;
 
