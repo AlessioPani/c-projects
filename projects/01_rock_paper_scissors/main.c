@@ -47,7 +47,7 @@ int main() {
     } else if (number >= 33 && number < 66) {
       computerMove = 'p'; // paper
     } else {
-      computerMove = 'z'; // scissors
+      computerMove = 's'; // scissors
     }
 
     // Ask the user his move.
