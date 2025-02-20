@@ -36,8 +36,8 @@ int main() {
   srand(time(0));
 
   // Main game loop.
-  while (userMove != 'e') {
-
+  while (userMove != 'e')
+  {
     // Generate a random number within the range 0-100.
     int number = rand() % MAX_NUMBER;
 
@@ -53,22 +53,26 @@ int main() {
     // Ask the user his move.
     printf("Select your move (Rock: r | Paper: p | Scissors: s | Exit: e): ");
     scanf(" %c", &userMove);
-    while (getchar() != '\n'); // Clear the input buffer
+
+    // Clear the input buffer.
+    while (getchar() != '\n');
 
     // Check for input and args.
     // If everything is fine, run the game and check for arg errors (null pointers).
-    if (validateUserInput(&userMove, &isValid) == STATUS_OK) {
-
-      if (isValid == VALIDATION_OK) {
-
-        if (userMove == 'e') {
+    if (validateUserInput(&userMove, &isValid) == STATUS_OK)
+    {
+      if (isValid == VALIDATION_OK)
+      {
+        if (userMove == 'e')
+        {
           printf("Exiting game...\n");
           break;
         }
 
-        if (game(&computerMove, &userMove, &result) == STATUS_OK) {
-
-          switch (result) {
+        if (game(&computerMove, &userMove, &result) == STATUS_OK)
+        {
+          switch (result)
+          {
             case DRAW:
               printf("Draw!\n\n");
               break;
@@ -109,15 +113,12 @@ Status_t validateUserInput(Input_t* userInput, Validation_t* result)
 
   if (userInput != NULL && result != NULL)
   {
-    if (*userInput == 'r' || *userInput == 'p' || *userInput == 's' || *userInput == 'e')
-    {
+    if (*userInput == 'r' || *userInput == 'p' || *userInput == 's' || *userInput == 'e') {
       *result = VALIDATION_OK;
-    } else
-    {
+    } else {
       *result = VALIDATION_KO;
     }
-  } else
-  {
+  } else {
     retValue = STATUS_KO;
   }
 
@@ -133,21 +134,16 @@ Status_t game(Input_t* computerMove, Input_t* userMove, Result_t* result)
 
   if (computerMove != NULL && userMove != NULL && result != NULL)
   {
-    if (*userMove == 'p' && *computerMove == 'r')
-    {
+    if (*userMove == 'p' && *computerMove == 'r') {
       *result = WIN;
-    } else if (*userMove == 'r' && *computerMove == 's')
-    {
+    } else if (*userMove == 'r' && *computerMove == 's') {
       *result = WIN;
-    } else if (*userMove == 's' && *computerMove == 'p')
-    {
+    } else if (*userMove == 's' && *computerMove == 'p') {
       *result = WIN;
-    } else if (*userMove == *computerMove)
-    {
+    } else if (*userMove == *computerMove) {
       *result = DRAW;
     }
-  } else
-  {
+  } else {
     retValue = STATUS_KO;
   }
 
