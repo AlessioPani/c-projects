@@ -8,13 +8,13 @@ int main() {
   printf("-- Welcome to the Simple Calculator --\n\n");
 
   OpCode_t opCode;
-  Validation_t isValid;
+  Validation_t isValid = false;
   float a;
   float b;
   
   // Select and validate the operation code.
   printf("Select the operation:\n");
-  printf("| 1: Addition \t | 2: Substraction \t | 3: Multiplication \t | 4: Division\n");
+  printf("| 1: Addition \t | 2: Subtraction \t | 3: Multiplication \t | 4: Division\n");
   printf("| 5: Logarithm \t | 6: Square \t \t \t \t \t | 0: Exit\n\n");
   printf("=> ");
   scanf("%d", &opCode);
@@ -27,56 +27,92 @@ int main() {
         case 0:
           printf("\n=> Exiting the calculator...\n");
           return 0;
+          
         case 1:
           printf("\n--- Sum of two numbers ---\n");
           printf("\nInsert the first number: ");
-          scanf("%f", &a);
+          if (scanf("%f", &a) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           printf("\nInsert the second number: ");
-          scanf("%f", &b);
+          if (scanf("%f", &b) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           printf("\n=> The result of %g + %g is %g\n", a, b, a+b);
           break;
+          
         case 2:
           printf("\n--- Subtraction of two numbers ---\n");
           printf("\nInsert the first number: ");
-          scanf("%f", &a);
+          if (scanf("%f", &a) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           printf("\nInsert the second number: ");
-          scanf("%f", &b);
+          if (scanf("%f", &b) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           printf("\n=> The result of %g - %g is %g\n", a, b, a-b);
           break;
+          
         case 3:
           printf("\n--- Multiplication of two numbers ---\n");
           printf("\nInsert the first number: ");
-          scanf("%f", &a);
+          if (scanf("%f", &a) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           printf("\nInsert the second number: ");
-          scanf("%f", &b);
+          if (scanf("%f", &b) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           printf("\n=> The result of %g x %g is %g\n", a, b, a*b);
           break;
+          
         case 4:
           printf("\n--- Division of two numbers ---\n");
           printf("\nInsert the dividend: ");
-          scanf("%f", &a);
+          if (scanf("%f", &a) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           printf("\nInsert the divider: ");
-          scanf("%f", &b);
+          if (scanf("%f", &b) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           if (b != 0) {
-            printf("\n=> The result of %g / %g is %g\n", a, b, a*b);
+            printf("\n=> The result of %g / %g is %g\n", a, b, a/b);
           } else {
             printf("\nDivider must be a non-zero!\n");
           }
           break;
+          
         case 5:
           printf("\n--- Logarithm (natural) of a number ---\n");
           printf("\nInsert the number: ");
-          scanf("%f", &a);
+          if (scanf("%f", &a) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           if (a > 0) {
             printf("\n=> The result of ln(%g) is is %g\n", a, logf(a));
           } else {
             printf("\nThe number must be a positive number!\n");
           }
           break;
+          
         case 6:
-          printf("\n--- Square of a number ---n");
+          printf("\n--- Square of a number ---\n");
           printf("\nInsert the number: ");
-          scanf("%f", &a);
+          if (scanf("%f", &a) != 1) {
+            printf("Invalid input. Exiting...\n");
+            return -1;
+          }
           printf("\n=> The result of %g * %g is %g\n", a, a, a * a);
           break;
       }
