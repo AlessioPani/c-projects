@@ -1,4 +1,8 @@
+#include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
 
 // Custom defines
 #define STATUS_OK 0
