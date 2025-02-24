@@ -1,3 +1,5 @@
+// Rock Paper Scissors game written in C.
+ 
 #include "../../common/common.h"
 
 // Custom definition

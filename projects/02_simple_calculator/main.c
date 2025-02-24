@@ -1,3 +1,5 @@
+// Simple calculator with 6 different operations and a proper input check.
+
 #include "../../common/common.h"
 
 // Declaration of functions.
