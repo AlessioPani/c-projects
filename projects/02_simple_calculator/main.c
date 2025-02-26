@@ -1,6 +1,18 @@
 // Simple calculator with 6 different operations and a proper input check.
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
 
-#include "../../common/common.h"
+// Custom defines
+#define STATUS_OK 0
+#define STATUS_KO -1
+#define VALIDATION_OK true
+#define VALIDATION_KO false
+
+// Custom types
+typedef int OpCode_t;
+typedef int Status_t;
+typedef bool Validation_t;
 
 // Declaration of functions.
 Status_t validateOpCode(OpCode_t* opCode, Validation_t* isValid);

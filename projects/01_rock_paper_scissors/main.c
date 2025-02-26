@@ -1,15 +1,23 @@
 // Rock Paper Scissors game written in C.
- 
-#include "../../common/common.h"
+#include <stdio.h>
+#include <stdbool.h>
+#include <time.h>
+#include <stdlib.h>
 
 // Custom definition
 #define WIN 1
 #define DRAW 2
 #define LOSS 3
+#define STATUS_OK 0
+#define STATUS_KO -1
+#define VALIDATION_OK true
+#define VALIDATION_KO false
 
 // Custom types
 typedef char Input_t;
 typedef int Result_t;
+typedef int Status_t;
+typedef bool Validation_t;
 
 // Declaration of functions
 Status_t game(Input_t* computerMove, Input_t* userMove, Result_t* result);
