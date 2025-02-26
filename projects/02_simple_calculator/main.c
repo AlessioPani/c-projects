@@ -19,14 +19,13 @@ Status_t validateOpCode(OpCode_t* opCode, Validation_t* isValid);
 
 // Main function.
 int main() {
-  printf("-- Welcome to the Simple Calculator --\n\n");
-
   OpCode_t opCode;
   Validation_t isValid = false;
   float a;
   float b;
   
   // Select and validate the operation code.
+  printf("-- Welcome to the Simple Calculator --\n\n");
   printf("Select the operation:\n");
   printf("| 1: Addition \t | 2: Subtraction \t | 3: Multiplication \t | 4: Division\n");
   printf("| 5: Logarithm \t | 6: Square \t \t \t \t \t | 0: Exit\n\n");

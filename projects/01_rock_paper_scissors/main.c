@@ -25,13 +25,13 @@ Status_t validateUserInput(Input_t* userInput, Validation_t* result);
 
 // Main function
 int main() {
-  printf("-- Welcome to the Rock Paper Scissors game --\n");
-
   const int MAX_NUMBER = 100;
   Input_t computerMove = '\0';
   Input_t userMove = '\0';
   Validation_t isValid;
   Result_t result;
+
+  printf("-- Welcome to the Rock Paper Scissors game --\n");
 
   // Current local time to define a unique seed.
   srand(time(0));
